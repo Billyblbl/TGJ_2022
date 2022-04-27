@@ -143,7 +143,7 @@ MonoBehaviour:
       m_Calls: []
   spawn: {fileID: 8338178547658329659}
   holder: {fileID: 996043383591346780}
-  proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
+  proj: {fileID: 8811462719327288837, guid: 2eff4afa6a24b474ead0e85290b9dddc, type: 3}
   stats:
     angle: 0
     activationDelay: 0.2
@@ -501,11 +501,11 @@ MonoBehaviour:
   holder: {fileID: 996043383591346780}
   proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
   stats:
-    angle: 0
+    angle: 10
     activationDelay: 0.1
     recoil: 0
     damage: 100
-    speed: 1
+    speed: 0.25
     instancesPerActivation: 1
 --- !u!1 &996043384754529783
 GameObject:
@@ -703,7 +703,7 @@ MonoBehaviour:
       m_Calls: []
   spawn: {fileID: 5151203030837836253}
   holder: {fileID: 996043383591346780}
-  proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
+  proj: {fileID: 8811462719327288837, guid: 2eff4afa6a24b474ead0e85290b9dddc, type: 3}
   stats:
     angle: 0
     activationDelay: 0.2
@@ -761,7 +761,7 @@ MonoBehaviour:
       m_Calls: []
   spawn: {fileID: 7392918596915579819}
   holder: {fileID: 996043383591346780}
-  proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
+  proj: {fileID: 8811462719327288837, guid: 2eff4afa6a24b474ead0e85290b9dddc, type: 3}
   stats:
     angle: 0
     activationDelay: 0.2
@@ -819,7 +819,7 @@ MonoBehaviour:
       m_Calls: []
   spawn: {fileID: 2513994233263163348}
   holder: {fileID: 996043383591346780}
-  proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
+  proj: {fileID: 8811462719327288837, guid: 2eff4afa6a24b474ead0e85290b9dddc, type: 3}
   stats:
     angle: 0
     activationDelay: 0.2
@@ -961,7 +961,7 @@ MonoBehaviour:
       m_Calls: []
   spawn: {fileID: 6542258992635616870}
   holder: {fileID: 996043383591346780}
-  proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
+  proj: {fileID: 8811462719327288837, guid: 2eff4afa6a24b474ead0e85290b9dddc, type: 3}
   stats:
     angle: 0
     activationDelay: 0.2
@@ -1050,7 +1050,7 @@ MonoBehaviour:
       m_Calls: []
   spawn: {fileID: 2183492188442062052}
   holder: {fileID: 996043383591346780}
-  proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
+  proj: {fileID: 8811462719327288837, guid: 2eff4afa6a24b474ead0e85290b9dddc, type: 3}
   stats:
     angle: 0
     activationDelay: 0.2
@@ -1285,7 +1285,7 @@ MonoBehaviour:
       m_Calls: []
   spawn: {fileID: 1460820624856003451}
   holder: {fileID: 996043383591346780}
-  proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
+  proj: {fileID: 8811462719327288837, guid: 2eff4afa6a24b474ead0e85290b9dddc, type: 3}
   stats:
     angle: 0
     activationDelay: 0.2
@@ -1656,7 +1656,7 @@ MonoBehaviour:
       m_Calls: []
   spawn: {fileID: 2760833093980946486}
   holder: {fileID: 996043383591346780}
-  proj: {fileID: 8811462719327288837, guid: fbead576c4eb67e4095e1bb29a3c5643, type: 3}
+  proj: {fileID: 8811462719327288837, guid: 2eff4afa6a24b474ead0e85290b9dddc, type: 3}
   stats:
     angle: 0
     activationDelay: 0.2
