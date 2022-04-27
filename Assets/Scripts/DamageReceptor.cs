@@ -14,7 +14,7 @@ public class DamageReceptor : MonoBehaviour {
 		OnHit?.Invoke();
 		if (health != null) {
 			if (damage.dot) health.dots.Add((damage.value, Time.time + damage.dotDuration));
-			else health.current -= damage.value;
+			else health.gauge.current -= damage.value;
 		}
 	}
 

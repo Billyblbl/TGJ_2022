@@ -5,6 +5,7 @@ using UnityEngine;
 #nullable enable
 
 public class EnemyController : TopDown2DController {
+	public AbilityController? abilityController;
 
 	private void OnEnable() {
 		target = FindObjectOfType<PlayerController>().transform;
@@ -25,17 +26,17 @@ public class EnemyController : TopDown2DController {
 		}
 	}
 
-	bool AimedShot() {
+	bool aimedShot { get {
 		var delta = target!.position - transform.position;
 		if (delta.magnitude > maxRange) return false;
 		var angle = Vector2.Angle(delta, transform.up);
 		return angle * 2 < aimCone;
-	}
+	} }
 
 	override protected void Update() {
 		base.Update();
 		ChooseMovement();
-		if (abilities.Length >= 0) abilities[0].enabled = AimedShot();
+		if (abilityController!.abilities.Length >= 0) abilityController.TrySetActivity(0, aimedShot);
 	}
 
 	private void FixedUpdate() {

@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : TopDown2DController {
 
 	public PlayerInput?	controls;
+	public AbilityController? abilityController;
 	public float deathDuration = .6f;
 	public float movementSensibility = 1f;
 
@@ -17,8 +18,8 @@ public class PlayerController : TopDown2DController {
 
 		var movementInput = controls!.actions["Fly"].ReadValue<Vector2>();
 
-		for (int i = 0; i < abilities.Length; i++) {
-			abilities[i].enabled = controls!.actions[string.Format("Ability{0}", 1+i)].ReadValue<float>() > float.Epsilon;
+		for (int i = 0; i < abilityController!.abilities.Length; i++) {
+			abilityController.TrySetActivity(i, controls!.actions[string.Format("Ability{0}", 1+i)].ReadValue<float>() > float.Epsilon);
 		}
 
 		if (controls!.currentControlScheme == "Keyboard & Mouse")

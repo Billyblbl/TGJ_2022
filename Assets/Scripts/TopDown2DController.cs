@@ -16,17 +16,6 @@ public class TopDown2DController : MonoBehaviour {
 	public Transform?	target;
 	public bool aimAtTarget = true;
 
-
-	[System.Serializable] public struct Ability {
-		public string name;
-		public MonoBehaviour?[] effects;
-		public bool enabled { set {
-			foreach (var effect in effects) if (effect != null) effect.enabled = value;
-		}}
-	}
-
-	public Ability[] abilities = new Ability[0];
-
 	protected Vector2 movement;
 	protected float turn;
 
