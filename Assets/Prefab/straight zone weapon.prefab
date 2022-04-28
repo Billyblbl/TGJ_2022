@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1222318665285115724}
   - component: {fileID: 1222318665285115725}
   - component: {fileID: 1222318665285115763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: straight zone weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222318665285115720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -131,6 +131,7 @@ MonoBehaviour:
   holder: {fileID: 0}
   proj: {fileID: 4959188333459448603, guid: f53fce04807a1674c95462cdd88e1060, type: 3}
   auto: 0
+  scaleByWeapon: 0
   stats:
     angle: 0
     activationDelay: 0

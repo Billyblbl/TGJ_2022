@@ -7,12 +7,23 @@ using UnityEngine;
 public class TopDown2DController : MonoBehaviour {
 
 	public Rigidbody2D?	rb;
-	public float speed = 10f;
-	public float acceleration = 5f;
-	public float speedMultiplier = 1f;
-	public float angularSpeed = 10f;
-	public float angularAcceleration = 5f;
-	public float angularSpeedMultiplier = 1f;
+
+	[System.Serializable] public struct MovementStat {
+		public float max;
+		public float acceleration;
+		public float multiplier;
+
+		public float TargetVel(float input) => Mathf.Clamp(input, -1f, 1f) * max * multiplier;
+		public Vector2 TargetVel(Vector2 input) => Vector2.ClampMagnitude(input, 1f) * max * multiplier;
+		public Vector3 TargetVel(Vector3 input) => Vector3.ClampMagnitude(input, 1f) * max * multiplier;
+
+		public float Apply(float current, float input, float dt) => Mathf.Lerp(current, TargetVel(input), dt * acceleration * multiplier);
+		public Vector2 Apply(Vector2 current, Vector2 input, float dt) => Vector2.Lerp(current, TargetVel(input), dt * acceleration * multiplier);
+		public Vector3 Apply(Vector3 current, Vector3 input, float dt) => Vector3.Lerp(current, TargetVel(input), dt * acceleration * multiplier);
+	}
+
+	public MovementStat lateral;
+	public MovementStat angular;
 	public Transform?	target;
 	public bool aimAtTarget = true;
 
@@ -20,13 +31,12 @@ public class TopDown2DController : MonoBehaviour {
 	protected float turn;
 
 	protected void UpdateControls(float dt) {
-		var targetVelocity = Vector2.ClampMagnitude(movement, 1f) * speed * speedMultiplier;
-		rb!.velocity = Vector2.Lerp(rb!.velocity, targetVelocity, dt * acceleration * speedMultiplier);
-		var targetAngularVelocity = Mathf.Clamp(turn, -1f, 1f) * angularSpeed * angularSpeedMultiplier;
-		rb!.angularVelocity = Mathf.Lerp(rb!.angularVelocity, targetAngularVelocity, dt * angularAcceleration * angularSpeedMultiplier);
+		rb!.velocity = lateral.Apply(rb!.velocity, movement, dt);
+		rb!.angularVelocity = angular.Apply(rb!.angularVelocity, turn, dt);
 	}
 
 	public float towardsTarget { get => Vector2.SignedAngle(transform.up, target!.position - transform.position); }
+	public Vector2 deltaTarget { get => target!.position - transform.position; }
 
 	virtual protected void Update() {
 		if (target != null && aimAtTarget) turn = towardsTarget;

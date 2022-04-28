@@ -8,12 +8,14 @@ using UnityEngine.Events;
 public class Preview : MonoBehaviour {
 
 	public Renderer[]	previewVFX = new Renderer[0];
+	public UnityEvent<float>	OnHold = new();
 	public UnityEvent<float>	OnRelease = new();
 	float startTime;
 
 	private void OnEnable() {
 		startTime = Time.time;
 		foreach (var vfx in previewVFX) vfx.enabled = true;
+		OnHold?.Invoke(Time.time);
 	}
 
 	private void OnDisable() {
