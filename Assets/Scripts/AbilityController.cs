@@ -27,8 +27,8 @@ public class AbilityController : MonoBehaviour {
 
 	public bool TrySetActivity(int i, bool value) {
 		if (!value || abilities[i].activationCost < energy.current) {
-			energy.current -= abilities[i].activationCost;
 			abilities[i].enabled = value;
+			if (abilities[i].wasEnabledThisUpdate) energy.current -= abilities[i].activationCost;
 		}
 		return abilities[i].enabled;
 	}
