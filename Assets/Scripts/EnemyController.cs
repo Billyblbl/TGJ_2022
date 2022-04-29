@@ -12,8 +12,9 @@ public class EnemyController : TopDown2DController {
 		target = FindObjectOfType<PlayerController>().transform;
 	}
 
-	public float targetDistance = 2f;
-	public bool	maintainDistance = false;
+	public float maxTargetDistance = 20f;
+	public float minTargetDistance = 4f;
+	// public bool	maintainDistance = false;
 	public float aimCone = 20f;
 	public float maxAttackRange = 4f;
 
@@ -23,7 +24,17 @@ public class EnemyController : TopDown2DController {
 	public float targetRangeWeight = 1f;
 	public float attacksWeight = 1f;
 
-	Vector2 targetMove { get => (deltaTarget.magnitude > targetDistance || maintainDistance) ? deltaTarget - deltaTarget.normalized * targetDistance : Vector2.zero; }
+	Vector2 targetMove { get {
+		var dist = deltaTarget.magnitude;
+		var dir = deltaTarget.normalized;
+
+		if (dist > maxTargetDistance + float.Epsilon)
+			return deltaTarget - dir * maxTargetDistance;
+		else if (dist < minTargetDistance - float.Epsilon)
+			return deltaTarget - dir * minTargetDistance;
+		else
+			return movement + Random.insideUnitCircle;
+	} }
 
 	Vector2 ResolveMovement() {
 
@@ -62,7 +73,7 @@ public class EnemyController : TopDown2DController {
 	}
 
 	Collider2D[]	ProbeNearAttacks() {
-		return Physics2D.OverlapCircleAll(transform.position, nearRange, LayerMask.GetMask("Attack")).ToArray();
+		return Physics2D.OverlapCircleAll(transform.position, nearRange, LayerMask.GetMask("Player")).ToArray();
 	}
 
 	private void FixedUpdate() {
