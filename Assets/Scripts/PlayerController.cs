@@ -15,6 +15,7 @@ public class PlayerController : TopDown2DController {
 
 	override protected void Update() {
 		base.Update();
+		if (!enabled) return;
 
 		var movementInput = controls!.actions["Fly"].ReadValue<Vector2>();
 

@@ -61,6 +61,7 @@ public class EnemyController : TopDown2DController {
 	}
 
 	bool aimedShot { get {
+		if (!target) return false;
 		var delta = target!.position - transform.position;
 		if (delta.magnitude > maxAttackRange) return false;
 		var angle = Vector2.Angle(delta, transform.up);
@@ -69,6 +70,7 @@ public class EnemyController : TopDown2DController {
 
 	override protected void Update() {
 		base.Update();
+		if (!enabled) return;
 		if (abilityController!.abilities.Length >= 0) abilityController.TrySetActivity(0, aimedShot);
 	}
 

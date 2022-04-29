@@ -36,9 +36,10 @@ public class TopDown2DController : MonoBehaviour {
 	}
 
 	public float towardsTarget { get => Vector2.SignedAngle(transform.up, target!.position - transform.position); }
-	public Vector2 deltaTarget { get => target!.position - transform.position; }
+	public Vector2 deltaTarget { get => (target != null) ? target!.position - transform.position : Vector2.zero ; }
 
 	virtual protected void Update() {
-		if (target != null && aimAtTarget) turn = towardsTarget;
+		if (target && target == null) enabled = false;
+		else if (target != null && aimAtTarget) turn = towardsTarget;
 	}
 }
