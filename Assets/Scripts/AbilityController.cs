@@ -46,4 +46,8 @@ public class AbilityController : MonoBehaviour {
 		}
 	}
 
+	private void OnDisable() {
+		foreach (var (ability, i) in abilities.Select((a, i) => (a, i))) if (ability.enabled) abilities[i].enabled = false;
+	}
+
 }

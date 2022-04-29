@@ -1908,10 +1908,10 @@ MonoBehaviour:
   scaleByWeapon: 0
   stats:
     angle: 0
-    activationDelay: 0.2
+    activationDelay: 0.15
     recoil: 0
     damage: 100
-    speed: 0.5
+    speed: 0.75
     instancesPerActivation: 1
 --- !u!82 &4463884453005419524
 AudioSource:
@@ -2716,7 +2716,7 @@ MonoBehaviour:
     recoil: 0
     damage: 100
     speed: 0.5
-    instancesPerActivation: 1
+    instancesPerActivation: 3
 --- !u!82 &1471804622826313364
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3240,10 +3240,10 @@ MonoBehaviour:
   scaleByWeapon: 0
   stats:
     angle: 0
-    activationDelay: 0.2
+    activationDelay: 0.15
     recoil: 0
     damage: 100
-    speed: 0.5
+    speed: 0.75
     instancesPerActivation: 1
 --- !u!82 &1842139416170488866
 AudioSource:
@@ -3708,10 +3708,10 @@ MonoBehaviour:
   scaleByWeapon: 0
   stats:
     angle: 0
-    activationDelay: 0.2
+    activationDelay: 0.15
     recoil: 0
     damage: 100
-    speed: 0.5
+    speed: 0.75
     instancesPerActivation: 1
 --- !u!82 &6374885025091681406
 AudioSource:
@@ -3877,10 +3877,10 @@ MonoBehaviour:
   scaleByWeapon: 0
   stats:
     angle: 0
-    activationDelay: 0.2
+    activationDelay: 0.15
     recoil: 0
     damage: 100
-    speed: 0.5
+    speed: 0.75
     instancesPerActivation: 1
 --- !u!82 &7212264377745255496
 AudioSource:
@@ -4628,10 +4628,10 @@ MonoBehaviour:
   scaleByWeapon: 0
   stats:
     angle: 0
-    activationDelay: 0.2
+    activationDelay: 0.15
     recoil: 0
     damage: 100
-    speed: 0.5
+    speed: 0.75
     instancesPerActivation: 1
 --- !u!82 &3593466501303500023
 AudioSource:
@@ -4828,10 +4828,10 @@ MonoBehaviour:
   scaleByWeapon: 0
   stats:
     angle: 0
-    activationDelay: 0.2
+    activationDelay: 0.15
     recoil: 0
     damage: 100
-    speed: 0.5
+    speed: 0.75
     instancesPerActivation: 1
 --- !u!82 &2807638786425323464
 AudioSource:
@@ -5222,7 +5222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controls: {fileID: 996043383989999565}
-  origin: {fileID: 996043383591347106}
   gamepadCursorDist: 0.7
 --- !u!1 &5430783895021621842
 GameObject:
@@ -5574,10 +5573,10 @@ MonoBehaviour:
   scaleByWeapon: 0
   stats:
     angle: 0
-    activationDelay: 0.2
+    activationDelay: 0.15
     recoil: 0
     damage: 100
-    speed: 0.5
+    speed: 0.75
     instancesPerActivation: 1
 --- !u!82 &3944221224566023950
 AudioSource:
@@ -7481,10 +7480,10 @@ MonoBehaviour:
   scaleByWeapon: 0
   stats:
     angle: 0
-    activationDelay: 0.2
+    activationDelay: 0.15
     recoil: 0
     damage: 100
-    speed: 0.5
+    speed: 0.75
     instancesPerActivation: 1
 --- !u!82 &4657264239971327638
 AudioSource:
