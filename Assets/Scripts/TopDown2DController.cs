@@ -26,6 +26,7 @@ public class TopDown2DController : MonoBehaviour {
 	public MovementStat angular;
 	public Transform?	target;
 	public bool aimAtTarget = true;
+	public float turnDistanceThreshold = .1f;
 
 	protected Vector2 movement;
 	protected float turn;
@@ -35,7 +36,7 @@ public class TopDown2DController : MonoBehaviour {
 		rb!.angularVelocity = angular.Apply(rb!.angularVelocity, turn, dt);
 	}
 
-	public float towardsTarget { get => Vector2.SignedAngle(transform.up, target!.position - transform.position); }
+	public float towardsTarget { get => deltaTarget.magnitude > turnDistanceThreshold ? Vector2.SignedAngle(transform.up, deltaTarget) : 0f; }
 	public Vector2 deltaTarget { get => (target != null) ? target!.position - transform.position : Vector2.zero ; }
 
 	virtual protected void Update() {
