@@ -5224,6 +5224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls: {fileID: 996043383989999565}
   gamepadCursorDist: 0.7
+  gamepadOrigin: {fileID: 996043383591347106}
 --- !u!1 &5333951710396636161
 GameObject:
   m_ObjectHideFlags: 0

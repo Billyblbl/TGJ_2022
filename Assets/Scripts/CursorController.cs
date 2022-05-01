@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class CursorController : MonoBehaviour {
 	public PlayerInput?	controls;
 	public float gamepadCursorDist = 0.7f;
+	public Transform? gamepadOrigin;
 
 	Camera? cam;
 
@@ -15,8 +16,7 @@ public class CursorController : MonoBehaviour {
 		cam = Camera.main;
 	}
 
-	Vector2 HalfScreen { get => new Vector2(Screen.width, Screen.height) / 2f; }
-	Vector2 AxisToScreenSquare(Vector2 input) => input * Mathf.Min(Screen.height, Screen.width) / 2f * gamepadCursorDist + HalfScreen;
+	Vector3 AxisToScreenSquare(Vector2 input) => input * Mathf.Min(Screen.height, Screen.width) / 2f * gamepadCursorDist + (Vector2)cam!.WorldToScreenPoint((gamepadOrigin!.position));
 
 	bool usingGamepad { get => controls!.currentControlScheme == "Gamepad"; }
 
