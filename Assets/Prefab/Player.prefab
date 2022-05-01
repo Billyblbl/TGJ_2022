@@ -2384,7 +2384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 996043383591346780}
   lateral:
-    max: 5
+    max: 1
     acceleration: 1
     multiplier: 1
   angular:
@@ -2557,14 +2557,14 @@ MonoBehaviour:
   - name: Straight zone shots
     effects:
     - {fileID: 8507042208695514465}
-    activationCost: 10
+    activationCost: 50
     drainRate: 5
   - name: Round zone shots
     effects:
     - {fileID: 469778781}
     - {fileID: 995222096}
     - {fileID: 81851806}
-    activationCost: 10
+    activationCost: 30
     drainRate: 5
 --- !u!1 &996043383989999571
 GameObject:
