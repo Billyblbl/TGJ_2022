@@ -623,13 +623,47 @@ MonoBehaviour:
   aimAtTarget: 1
   turnDistanceThreshold: 0.1
   abilityController: {fileID: 4735575632907114079}
+  hitCircle: {fileID: 8401960822393319231}
   maxTargetDistance: 20
   minTargetDistance: 4
   aimCone: 20
   maxAttackRange: 30
-  nearRange: 4
+  nearRange: 5
   targetRangeWeight: 1
   attacksWeight: 1
+  attackProximityWeight:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 10
+      inSlope: -4.516605
+      outSlope: -4.516605
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.23551436
+    - serializedVersion: 3
+      time: 1.7817993
+      value: 4.646225
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.990874
+      value: 0.04716981
+      inSlope: -4.465482
+      outSlope: -4.465482
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06089585
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &4735575632907114079
 MonoBehaviour:
   m_ObjectHideFlags: 0

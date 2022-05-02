@@ -136,6 +136,6 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
+    damage: 250
     speed: 0
     instancesPerActivation: 1

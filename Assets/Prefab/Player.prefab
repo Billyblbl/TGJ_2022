@@ -159,8 +159,8 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
-    speed: 3
+    damage: 175
+    speed: 5
     instancesPerActivation: 1
 --- !u!58 &255700927
 CircleCollider2D:
@@ -288,8 +288,8 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
-    speed: 3
+    damage: 175
+    speed: 5
     instancesPerActivation: 1
 --- !u!58 &355134334
 CircleCollider2D:
@@ -1080,8 +1080,8 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
-    speed: 3
+    damage: 175
+    speed: 5
     instancesPerActivation: 1
 --- !u!58 &513088938
 CircleCollider2D:
@@ -1209,8 +1209,8 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
-    speed: 3
+    damage: 175
+    speed: 5
     instancesPerActivation: 1
 --- !u!58 &842923657
 CircleCollider2D:
@@ -1387,8 +1387,8 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
-    speed: 3
+    damage: 175
+    speed: 5
     instancesPerActivation: 1
 --- !u!58 &1292817455
 CircleCollider2D:
@@ -1516,8 +1516,8 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
-    speed: 3
+    damage: 175
+    speed: 5
     instancesPerActivation: 1
 --- !u!58 &1782542545
 CircleCollider2D:
@@ -1645,8 +1645,8 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
-    speed: 3
+    damage: 175
+    speed: 5
     instancesPerActivation: 1
 --- !u!58 &1841838491
 CircleCollider2D:
@@ -2411,9 +2411,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gauge:
-    max: 10000
-    _current: 10000
-    regen: 1
+    max: 5000
+    _current: 5000
+    regen: 0
     regenDelay: 1
     OnValueChange:
       m_PersistentCalls:
@@ -2509,9 +2509,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energy:
-    max: 100
-    _current: 100
-    regen: 10
+    max: 200
+    _current: 200
+    regen: 50
     regenDelay: 1
     OnValueChange:
       m_PersistentCalls:
@@ -2539,7 +2539,7 @@ MonoBehaviour:
     effects:
     - {fileID: 996043384721041377}
     activationCost: 0.1
-    drainRate: 1
+    drainRate: 0.5
   - name: Rotating shots
     effects:
     - {fileID: 3617959324162422073}
@@ -2553,7 +2553,7 @@ MonoBehaviour:
     - {fileID: 5240933166466861593}
     - {fileID: 4717540550627100373}
     activationCost: 0.1
-    drainRate: 4
+    drainRate: 3
   - name: Straight zone shots
     effects:
     - {fileID: 8507042208695514465}
@@ -3154,8 +3154,8 @@ MonoBehaviour:
     angle: 0
     activationDelay: 0
     recoil: 0
-    damage: 100
-    speed: 3
+    damage: 175
+    speed: 5
     instancesPerActivation: 1
 --- !u!58 &1222318665606322223
 CircleCollider2D:

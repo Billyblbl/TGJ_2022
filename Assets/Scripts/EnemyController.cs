@@ -7,6 +7,7 @@ using System.Linq;
 
 public class EnemyController : TopDown2DController {
 	public AbilityController? abilityController;
+	public CircleCollider2D? hitCircle;
 
 	private void OnEnable() {
 		target = FindObjectOfType<PlayerController>().transform;
@@ -23,6 +24,7 @@ public class EnemyController : TopDown2DController {
 
 	public float targetRangeWeight = 1f;
 	public float attacksWeight = 1f;
+	public AnimationCurve attackProximityWeight = new();
 
 	Vector2 targetMove { get {
 		var dist = deltaTarget.magnitude;
@@ -41,7 +43,8 @@ public class EnemyController : TopDown2DController {
 		Vector2 pos = transform.position;
 		var awayFromAttacks = nearAttacks.Select(c => {
 			var delta = c.ClosestPoint(pos) - pos;
-			return -delta / Mathf.Clamp(delta.magnitude * delta.magnitude * delta.magnitude, float.Epsilon, float.MaxValue);
+			// return -delta / Mathf.Clamp(Mathf.Pow(delta.magnitude - hitCircle?.radius ?? 0f, attackDistanceFallOff), float.Epsilon, float.MaxValue);
+			return -delta.normalized * attackProximityWeight.Evaluate(delta.magnitude - hitCircle?.radius ?? 0f);
 		}).Aggregate(Vector2.zero, (a, b) => a+b) / Mathf.Clamp(nearAttacks.Length, 1, int.MaxValue);
 
 		return Vector2.ClampMagnitude(
